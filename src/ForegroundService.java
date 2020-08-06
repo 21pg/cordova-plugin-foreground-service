@@ -58,16 +58,13 @@ public class ForegroundService extends Service {
         NotificationChannel channel = new NotificationChannel("foreground.service.channel", "Background Services", importance);
         channel.setDescription("Enables background processing.");
         getSystemService(NotificationManager.class).createNotificationChannel(channel);
-
-        // Get notification icon
-        int icon = getResources().getIdentifier((String) extras.get("icon"), "drawable", context.getPackageName());
+       
 
         // Make notification
         Notification notification = new Notification.Builder(context, "foreground.service.channel")
             .setContentTitle((CharSequence) extras.get("title"))
             .setContentText((CharSequence) extras.get("text"))
             .setOngoing(true)
-            .setSmallIcon(icon == 0 ? 17301514 : icon) // Default is the star icon
             .build();
 
         // Get notification ID
