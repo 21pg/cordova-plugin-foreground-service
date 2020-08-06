@@ -23,9 +23,8 @@ public class ForegroundPlugin extends CordovaPlugin {
                 // Pass the notification title/text/icon to the service
                 intent.putExtra("title", args.getString(0))
                     .putExtra("text", args.getString(1))
-                    .putExtra("icon", args.getString(2))
-                    .putExtra("importance", args.getString(3))
-                    .putExtra("id", args.getString(4));
+                    .putExtra("importance", args.getString(2))
+                    .putExtra("id", args.getString(3));
                 
                 // Start the service
                 activity.getApplicationContext().startForegroundService(intent);
